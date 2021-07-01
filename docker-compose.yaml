@@ -1,0 +1,12 @@
+version: "3"
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - 8379:6379
+  id_gen:
+    image: everettcaleb/snowflake
+    environment:
+      - REDIS_URI=redis://redis:8379/
+    ports:
+      - 8901:8080

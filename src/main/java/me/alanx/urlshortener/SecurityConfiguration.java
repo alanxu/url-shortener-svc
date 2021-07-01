@@ -1,4 +1,4 @@
-package com.example.onehourservice;
+package me.alanx.urlshortener;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -14,8 +14,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .httpBasic()
         .and()
             .authorizeRequests()
-                .antMatchers("/health").permitAll()
-                .anyRequest().authenticated()
+                .antMatchers("/shorten", "/retrieve").authenticated()
+                .anyRequest().permitAll()
         .and()
             .csrf().disable();
     }
