@@ -1,11 +1,14 @@
 # url-shortener-svc
 
-Simple URL shortener service based on Spring Boot. Generate increasing
+* Simple URL shortener service based on Spring Boot. 
+* Generate increasing
 id for each URL and use Base62 alg to encoding the id. Generating
 increasing ID can avoid any duplication/collision on the short URL, so
 we don't have to check data store for duplication. This will improve
-throughput and laytency. The ID generator should be scalable and distributedly
-unique and data store should use NoSQL. These are TODO.
+throughput and laytency. The ID generator should be scalable, right now
+  is dummy, will move to Snowflake ID generator later.
+* Data store is a local hashmap, will move to NoSQL later.
+* Currently using Spring Security default basic auth.
 
 ## Run The Service
 ### Install Spring Boot CLI
